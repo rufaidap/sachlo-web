@@ -1,0 +1,123 @@
+
+
+/*hse*/
+.hse {padding-top: 70px; padding-bottom: 70px; position: relative;}
+.hse .container-fluid {width: 80%;}
+.hse h3 {font-size: 28px; font-weight: 400; color: #1c1d1d; margin-bottom: 20px; text-align: center;}
+.hse h3 span {font-weight: 600;}
+.hse p {font-size: 13px; font-weight: 500; color: #1c1d1d; text-align: center; margin-bottom: 50px;}
+.hse .menu div {padding: 15px 20px 15px 40px; margin-bottom: 10px; color: #333333; background: #f2f2f2; cursor: pointer; position: relative; vertical-align: middle; font-weight: 700; transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);}
+.hse .menu div span.light {height: 8px; width: 8px; position: absolute; top: 24px; left: 15px; background-color: #ffc023; border-radius: 100%; transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);}
+.hse .menu div.active span.light {background-color: #ffc023; left: 0; height: 100%; width: 3px; top: 0; border-radius: 0;}
+.hse .menu div.active {color: #fff; padding: 15px 20px 15px 20px; background: #009fe3;}
+.hse ul.nacc {position: relative; height: 320px!important; list-style: none; margin: 0; padding: 0; transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);}
+.hse ul.nacc li {opacity: 0; transform: translateX(50px); position: absolute; list-style: none; transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1); width: 100%;}
+.hse ul.nacc li.active {transition-delay: 0.3s; z-index: 2; opacity: 1; transform: translateX(0px); width: 100%;}
+.hse ul.nacc li p {margin: 0;}
+
+.hse .box:hover {-webkit-transform: translateY(-10px); transform: translateY(-10px); -webkit-box-shadow: 0 2px 28px 0 rgb(0 0 0 / 9%); box-shadow: 0 2px 28px 0 rgb(0 0 0 / 9%);}
+.hse .box {z-index: 1; position: relative; width: 100%; overflow: hidden; -webkit-transition: 0.5s; transition: 0.5s;}
+.hse .box img {display: block; width: 100%;}
+.hse .overlay {display: block; position: absolute; height: 100%; width: 100%; bottom: 0; z-index: 3; background: rgb(0 0 0 / 30%);}
+.hse .text h5 {font-size: 16px; color: #fff; font-weight: 400; text-align: center; line-height: 26px; margin-bottom: 0;}
+.hse .text {-webkit-transition: 0.5s; transition: 0.5s; position: absolute; width: 100%; z-index: 10; padding: 15px; top: 50%; left: 50%; transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%);}
+.hse .box:hover .overlay {background: rgb(255 192 35 / 85%);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width : 1920px) and (max-width : 2560px){
+.hse ul.nacc {height: 437.414px!important;}
+
+}
+@media only screen and (min-width : 1600px) and (max-width : 1919px){
+.hse ul.nacc {height: 373.164px!important;}
+
+}
+@media only screen and (min-width : 1440px) and (max-width : 1599px){
+
+
+}
+@media only screen and (min-width : 1366px) and (max-width : 1439px){
+
+
+}
+@media only screen and (min-width : 1280px) and (max-width : 1365px){
+.hse .container-fluid {width: 85%;}
+
+
+
+}
+@media only screen and (min-width : 1200px) and (max-width : 1279px){
+.hse .container-fluid {width: 85%;}
+
+
+
+}
+@media only screen and (min-width : 1024px) and (max-width : 1199px){
+
+.hse {padding-top: 50px; padding-bottom: 50px;}
+.hse .container-fluid {width: 90%;}
+.hse h3 {font-size: 24px; margin-bottom: 15px;} 
+.hse p {margin-bottom: 35px;}
+.hse ul.nacc {height: 247.617px!important;}
+
+
+
+}
+@media only screen and (min-width : 768px) and (max-width :1023px){
+
+.hse {padding-top: 50px; padding-bottom: 50px;}
+.hse .container-fluid {width: 90%;}
+.hse h3 {font-size: 24px; margin-bottom: 15px;} 
+.hse p {margin-bottom: 35px;}
+.hse .box {margin-top: 30px;}
+.hse ul.nacc {height: 850px!important;}
+
+
+
+}
+@media only screen and (min-width : 150px) and (max-width : 767px){
+
+.hse {padding-top: 50px; padding-bottom: 50px;}
+.hse .container-fluid {width: 95%;}
+.hse h3 {font-size: 24px; margin-bottom: 15px;} 
+.hse p {margin-bottom: 30px;}
+.hse .box {margin-top: 20px;}
+.hse ul.nacc li {transform: translateX(0px);}
+.hse ul.nacc {height: 1445.46px!important;}
+
+
+
+}
+@media only screen and (max-width : 375px){
+.hse ul.nacc {height: 1269.38px!important;}
+
+
+}
+@media only screen and (max-width : 360px){
+
+
+
+}
+@media only screen and (max-width : 320px){
+.hse h3 {font-size: 22px; margin-bottom: 10px;}
+.hse ul.nacc {height: 1075.69px!important;}
+
+}

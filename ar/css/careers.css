@@ -1,0 +1,96 @@
+
+
+/*career*/
+.career {padding-top: 70px; padding-bottom: 70px;}
+.career .container-fluid {width: 80%;}
+.career h3 {font-size: 28px; font-weight: 400; color: #1c1d1d; margin-bottom: 20px; text-align: center;}
+.career h3 span {font-weight: 600;}
+.career p {font-size: 13px; font-weight: 500; color: #1c1d1d; text-align: center; margin-bottom: 50px;}
+.career form input {display: block; width: 100%; padding: 10px 12px; color: #555; background-color: inherit; border: 1px solid #ccc; border-radius: 0px; box-shadow: none; margin-bottom: 20px; font-size: 14px; height: calc(1.5em + .75rem + 15px); outline: none;}
+.career form textarea {display: block; width: 100%; padding: 10px 12px; color: #555; background-color: inherit; border: 1px solid #ccc; border-radius: 0px; box-shadow: none; margin-bottom: 20px; font-size: 14px; height: 100px; outline: none;}
+.career button {-webkit-transition: 0.5s; transition: 0.5s; border-radius: 50px; font-size: 13px; background: #009fe3; color: #fff; padding: 10px 30px; border: none; cursor: pointer; margin-bottom: 0px;}
+.career button:hover {background: #ffc023; color: #fff;}
+.form-control:focus {border-color: #009fe3; box-shadow: none!important;}
+
+.g-recaptcha {transform-origin: left top; -webkit-transform-origin: left top;}
+.g-recaptcha {transform: scale(0.70000); width: 300px; float: left;}
+
+
+
+
+
+
+
+@media only screen and (min-width : 1920px) and (max-width : 2560px){
+
+
+}
+@media only screen and (min-width : 1600px) and (max-width : 1919px){
+
+
+}
+@media only screen and (min-width : 1440px) and (max-width : 1599px){
+
+
+}
+@media only screen and (min-width : 1366px) and (max-width : 1439px){
+
+
+}
+@media only screen and (min-width : 1280px) and (max-width : 1365px){
+.career .container-fluid {width: 85%;}
+
+
+
+}
+@media only screen and (min-width : 1200px) and (max-width : 1279px){
+.career .container-fluid {width: 85%;}
+
+
+
+}
+@media only screen and (min-width : 1024px) and (max-width : 1199px){
+
+.career {padding-top: 50px; padding-bottom: 50px;}
+.career .container-fluid {width: 90%;}
+.career h3 {font-size: 24px; margin-bottom: 15px;} 
+.career p {margin-bottom: 35px;}
+
+
+
+}
+@media only screen and (min-width : 768px) and (max-width :1023px){
+
+.career {padding-top: 50px; padding-bottom: 50px;}
+.career .container-fluid {width: 90%;}
+.career h3 {font-size: 24px; margin-bottom: 15px;} 
+.career p {margin-bottom: 35px;}
+
+
+
+}
+@media only screen and (min-width : 150px) and (max-width : 767px){
+
+.career {padding-top: 50px; padding-bottom: 50px;}
+.career .container-fluid {width: 95%;}
+.career h3 {font-size: 24px; margin-bottom: 15px;} 
+.career button {float: left; margin-bottom: 25px;}
+.career p {margin-bottom: 30px;}
+
+
+
+}
+@media only screen and (max-width : 375px){
+
+
+
+}
+@media only screen and (max-width : 360px){
+
+
+
+}
+@media only screen and (max-width : 320px){
+.career h3 {font-size: 22px; margin-bottom: 10px;}
+
+}

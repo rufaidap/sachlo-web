@@ -1,0 +1,122 @@
+
+
+/*contact*/
+.contact {padding-top: 70px; padding-bottom: 70px;}
+.contact .container-fluid {width: 80%;}
+.contact .lin {width: 1px; background: #ddd; height: 100%; margin: auto;}
+.contact .wi {padding: 50px; border: 1px solid #ddd;}
+.contact .wi form input {box-shadow: none; font-size: 14px; width: 100%; margin: 0px 0px 30px 0px; border: 0; border-bottom: 1px solid #e4e4e4; padding: 10px; outline: none;}
+.contact .wi form select {box-shadow: none; font-size: 14px; width: 100%; margin: 0px 0px 30px 0px; border: 0; border-bottom: 1px solid #e4e4e4; outline: none;}
+.contact .wi form textarea {box-shadow: none; font-size: 14px; width: 100%; margin: 0px 0px 30px 0px; border: 0; border-bottom: 1px solid #e4e4e4; padding: 10px; outline: none;}
+.contact button {float: right; -webkit-transition: 0.5s; transition: 0.5s; border-radius: 50px; font-size: 13px; background: #009fe3; color: #fff; padding: 10px 30px; border: none; cursor: pointer; margin-bottom: 0px;}
+.contact button:hover {background: #ffc023; color: #fff;}
+
+.contact h4 {font-size: 24px; font-weight: 500; color: #1f1f1f; margin-bottom: 15px;}
+.contact h4:not(:first-child) {margin-top: 25px;}
+.contact a {font-size: 13px; font-weight: 500; color: #666d7a; margin: 0;}
+.contact a:hover {color: #009fe3;}
+.contact p {font-size: 13px; font-weight: 500; color: #666d7a; margin: 0;}
+.contact p:not(:first-child) {margin-top: 8px;}
+.contact .soci .btn {margin-right: 5px; padding: 7px; border-radius: 50px; border: 1px solid #fff; color: #fff; background: #009fe3; -webkit-transition: 0.5s; transition: 0.5s;}
+.contact .soci .btn:hover {border: 1px solid #fff; background: #ffc023; color: #fff;}
+.contact .soci img {width: 50%; margin-top: 20px;}
+
+.g-recaptcha {transform-origin: right top; -webkit-transform-origin: right top;}
+.g-recaptcha {transform: scale(0.70000);}
+
+
+
+/*map*/
+.map {padding-bottom: 70px;}
+.map .container-fluid {width: 80%;}
+
+
+
+
+@media only screen and (min-width : 1920px) and (max-width : 2560px){
+
+
+}
+@media only screen and (min-width : 1600px) and (max-width : 1919px){
+
+
+}
+@media only screen and (min-width : 1440px) and (max-width : 1599px){
+
+
+}
+@media only screen and (min-width : 1366px) and (max-width : 1439px){
+
+
+}
+@media only screen and (min-width : 1280px) and (max-width : 1365px){
+.contact .container-fluid {width: 85%;}
+
+.map .container-fluid {width: 85%;}
+
+}
+@media only screen and (min-width : 1200px) and (max-width : 1279px){
+.contact .container-fluid {width: 85%;}
+
+.map .container-fluid {width: 85%;}
+
+
+
+}
+@media only screen and (min-width : 1024px) and (max-width : 1199px){
+
+.contact {padding-top: 50px; padding-bottom: 50px;}
+.contact .container-fluid {width: 90%;}
+.contact h4 {font-size: 20px; margin-bottom: 10px;}
+.contact h4:not(:first-child) {margin-top: 20px;}
+
+.map {padding-bottom: 50px;}
+.map .container-fluid {width: 90%;}
+
+
+
+}
+@media only screen and (min-width : 768px) and (max-width :1023px){
+
+.contact {padding-top: 50px; padding-bottom: 50px;}
+.contact .container-fluid {width: 90%;}
+.contact h4 {font-size: 20px; margin-bottom: 10px;}
+.contact h4:not(:first-child) {margin-top: 20px;}
+.contact .wi {padding: 35px;}
+
+.map {padding-bottom: 50px;}
+.map .container-fluid {width: 90%;}
+
+
+
+}
+@media only screen and (min-width : 150px) and (max-width : 767px){
+
+.contact {padding-top: 50px; padding-bottom: 50px;}
+.contact .container-fluid {width: 95%;}
+.contact h4 {font-size: 20px; margin-bottom: 10px;}
+.contact h4:not(:first-child) {margin-top: 20px;}
+.contact .wi {padding: 25px 15px;}
+.contact button {float: left; margin-bottom: 25px;}
+
+.map {padding-bottom: 50px;}
+.map .container-fluid {width: 95%;}
+
+
+
+}
+@media only screen and (max-width : 375px){
+
+
+
+}
+@media only screen and (max-width : 360px){
+
+
+
+}
+@media only screen and (max-width : 320px){
+.contact h3 {font-size: 22px;}
+
+
+}
