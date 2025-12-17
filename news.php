@@ -106,55 +106,44 @@ $newsList = $response['data']['getNews'] ?? [];
         <div class="container-fluid">
 
             <div class="row">
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="bx">
-                        <a href="#" class="grid__image">
-                            <img src="images/nws-fr-1.jpg">
-                            <div class="post-date">Dec 01, 2021</div>
-                            <div class="hov">
-                                <p>View More</p>
+                <?php if (!empty($newsList['data'])): ?>
+                    <?php foreach ($newsList['data'] as $news): ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bx">
+                                <a href="news-detail.php?slug=<?php echo htmlspecialchars($news['slug']); ?>" class="grid__image">
+                                    <?php 
+                                        $imgSrc = 'images/nws-fr-1.jpg'; // Default placeholder
+                                        if (!empty($news['thumbnail_image'])) {
+                                            $imgSrc = $news['thumbnail_image'];
+                                        } elseif (!empty($news['banner_image'])) {
+                                            $imgSrc = $news['banner_image'];
+                                        }
+                                        
+                                        $dateVal = !empty($news['published_date']) ? $news['published_date'] : $news['created_at'];
+                                        // Handle JS timestamp (milliseconds)
+                                        if (is_numeric($dateVal) && strlen((string)$dateVal) > 10) {
+                                            $dateVal = $dateVal / 1000;
+                                        }
+                                        $displayDate = date('M d, Y', (int)$dateVal);
+                                    ?>
+                                    <img src="<?php echo htmlspecialchars($imgSrc); ?>" alt="<?php echo htmlspecialchars($news['title']); ?>">
+                                    <div class="post-date"><?php echo $displayDate; ?></div>
+                                    <div class="hov">
+                                        <p>View More</p>
+                                    </div>
+                                </a>
+                                <div class="tx">
+                                    <h4><a href="news-detail.php?slug=<?php echo htmlspecialchars($news['slug']); ?>"><?php echo htmlspecialchars($news['title']); ?></a></h4>
+                                    <p><?php echo htmlspecialchars(mb_strimwidth($news['short_description'], 0, 100, '...')); ?></p>
+                                </div>
                             </div>
-                        </a>
-                        <div class="tx">
-                            <h4><a href="#">New Website for Sachlo Saudi Arabia Launched</a></h4>
-                            <p>We are pleased to announce the launching of new website of SACHLO...</p>
                         </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="col-12 px-5 py-5 text-center">
+                        <h4>No news available at the moment.</h4>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-post-center">
-                    <div class="bx">
-                        <a href="news-detail.php" class="grid__image">
-                            <img src="images/nws-fr-2.jpg">
-                            <div class="post-date">Nov 10, 2025</div>
-                            <div class="hov">
-                                <p>View More</p>
-                            </div>
-                        </a>
-                        <div class="tx">
-                            <h4><a href="news-detail.php">Achieved 8 Million Safe Man Hours</a></h4>
-                            <p>We are pleased to announce that SACHLO has achieved a Company safety...</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="bx">
-                        <a href="#" class="grid__image">
-                            <img src="images/nws-fr-1.jpg">
-                            <div class="post-date">Dec 01, 2021</div>
-                            <div class="hov">
-                                <p>View More</p>
-                            </div>
-                        </a>
-                        <div class="tx">
-                            <h4><a href="#">New Website for Sachlo Saudi Arabia Launched</a></h4>
-                            <p>We are pleased to announce the launching of new website of SACHLO...</p>
-                        </div>
-                    </div>
-                </div>
-
+                <?php endif; ?>
             </div>
 
         </div>
