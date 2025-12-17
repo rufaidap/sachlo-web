@@ -37,10 +37,12 @@ query GetNews($size: Int, $page: Int, $search: String, $status: String) {
 
 $response = graphqlRequest($query);
 
-// print_r($query);
-// exit;
 
-$newsList = $response['data']['newsList'] ?? [];
+
+$newsList = $response['data']['getNews'] ?? [];
+
+// print_r($newsList);
+// exit;
 ?>
 
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->

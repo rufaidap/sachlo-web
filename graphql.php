@@ -5,7 +5,7 @@ function graphqlRequest($query, $variables = []) {
 
     $payload = json_encode([
         "query" => $query,
-        "variables" => $variables
+        "variables" => (object)$variables
     ]);
 
     $ch = curl_init($endpoint);
