@@ -1,0 +1,151 @@
+.top-bg {margin-top: 87px; background: #f6f6f6; padding: 20px 0px;}
+.top-bg .container-fluid {width: 95%;}
+.top-bg h4 {font-size: 14px; font-weight: 500; color: #546373; margin: 0;}
+.top-bg a {font-size: 14px; font-weight: 500; color: #009fe3;}
+
+
+/*products*/
+.products {padding-top: 70px; padding-bottom: 70px;}
+.products .container-fluid {width: 80%;}
+.products .sub-bg {background: #595a5e; padding: 10px;}
+.products .sub-bg .ye-bg {background: #009fe3; text-align: center; padding: 15px; margin-bottom: 20px;}
+.products .sub-bg .ye-bg h4 {font-size: 16px; color: #fff; font-weight: 500; margin: 0; text-align: left;}
+.products .sub-bg .pr-bg ul li {background: #fff; padding: 12px; margin-bottom: 2px; line-height: 18px; -webkit-transition: all .8s ease; -moz-transition: all .8s ease; -ms-transition: all .8s ease; -o-transition: all .8s ease; transition: all .8s ease;}
+.products .sub-bg .pr-bg ul li:hover {background: #898a8c;}
+.products .sub-bg .pr-bg ul li:hover a {color: #fff;}
+.products .sub-bg .pr-bg ul li a {color: #595a5e; font-size: 13px; font-weight: 500;}
+.products .sub-bg .frm-bg {margin-top: 40px;}
+.products .sub-bg .frm-bg input, select, textarea {margin-bottom: 10px; outline: none; background: none; padding: 12px; border: 1px solid #dcdcdc; font-size: 13px; width: 100%; color: #fff!important;}
+.products .sub-bg .frm-bg input[type=submit] {background: #009fe3; border: none; -webkit-transition: all .8s ease; -moz-transition: all .8s ease; -ms-transition: all .8s ease; -o-transition: all .8s ease; transition: all .8s ease;}
+.products .sub-bg .frm-bg input[type=submit]:hover {background: #ffc023;}
+::placeholder {color: #fff;}
+
+.products .mob {display: none;}
+.products .lap {display: block;}
+
+.products h3 {font-size: 28px; font-weight: 700; color: #1c1d1d; margin-bottom: 20px;}
+.products p {font-size: 13px; font-weight: 500; color: #1c1d1d; margin-bottom: 10px;}
+.products h5 {font-size: 26px; font-weight: 600; color: #1c1d1d; text-align: center; margin-top: 22px; line-height: 32px; margin-bottom: 22px;}
+.products a.bot {color: #000; display: inline-block; margin: 0 10px 13px 0px; background: #fff; padding: 12px 20px; border: 1px solid #ddd;}
+.products a.bot:hover {color: #fff; background: #009fe3;}
+.products .bx {margin-top: 30px; -webkit-transition: 0.3s; transition: 0.3s;}
+.products .bx img {width: 100%; display: block;}
+.products .bx .grid__image {display: block; position: relative; margin: 0 auto;}
+.products .bx .grid__image .hov {position: absolute; bottom: 0; left: 0; right: 0; top: 0; background-color: rgb(15 164 228 / 72%); overflow: hidden; width: 100%; height: 100%; -webkit-transform: scale(0); transition: .6s ease;}
+.products .bx:hover .grid__image .hov {transform: scale(1);}
+.products .bx .grid__image .hov p {color: #fff; font-size: 15px; margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); text-align: center;}
+
+/*.products .dw-img {text-align: center; padding: 10px; border: 2px solid #dfe7f1;}*/
+.products .dw-img img {margin-top: 40px; width: 100%;}
+.products .dw-img h6 {font-size: 24px; font-weight: 500; color: #000; border: 1px solid #009fe3; text-align: center; background: #fff; margin: 0; padding: 20px;}
+.products .bg {background-color: #eeeff1; padding: 15px 25px 25px 25px; margin-top: 25px;}
+.products .bg p {font-size: 13px; font-weight: 500; color: #1c1d1d; margin-bottom: 20px;}
+.products .nw .do li {font-size: 13px; color: #1c1d1d; padding: 0px 0px 0px 20px; line-height: 20px; background: url(../images/point.png) no-repeat 0 6px; font-weight: 500;}
+.products .nw .do li:not(:first-child) {margin-top: 18px;}
+.products .table {margin-top: 40px;}
+.products .table thead th {border-bottom: 2px solid #009fe3; color: #009fe3; font-size: 16px; font-weight: 600; padding: 16px;}
+.products .table td, .table th {font-size: 14px; font-weight: 600; padding: 16px;}
+
+.products .top {margin-top: 40px;}
+.ce {text-align: center;} 
+
+
+
+
+
+
+
+@media only screen and (min-width : 1920px) and (max-width : 2560px){
+
+
+}
+@media only screen and (min-width : 1600px) and (max-width : 1919px){
+
+
+}
+@media only screen and (min-width : 1440px) and (max-width : 1599px){
+
+
+}
+@media only screen and (min-width : 1366px) and (max-width : 1439px){
+
+
+}
+@media only screen and (min-width : 1280px) and (max-width : 1365px){
+.products .container-fluid {width: 85%;}
+
+
+
+}
+@media only screen and (min-width : 1200px) and (max-width : 1279px){
+.products .container-fluid {width: 85%;}
+.products .top {margin-top: 40px;}
+
+
+}
+@media only screen and (min-width : 1024px) and (max-width : 1199px){
+
+.products {padding-top: 50px; padding-bottom: 50px;}
+.products .container-fluid {width: 90%;}
+.products h3 {font-size: 24px; margin-bottom: 15px;} 
+.products .sub-bg .ye-bg h4 {font-size: 14px;}
+.products .sub-bg .pr-bg ul li a {font-size: 12px;}
+.products .sub-bg .pr-bg ul li {line-height: 15px;}
+.products .sub-bg .frm-bg {margin-top: 30px;}
+.products .zoom {overflow: hidden; margin-top: 25px;}
+
+
+
+}
+@media only screen and (min-width : 768px) and (max-width :1023px){
+
+.products {padding-top: 50px; padding-bottom: 50px;}
+.products .container-fluid {width: 90%;}
+.products h3 {font-size: 24px; margin-bottom: 15px;} 
+
+.products .mob {display: block;}
+.products .lap {display: none;}
+
+.products .sub-bg {margin-bottom: 30px; padding: 30px;}
+.products .top {margin-top: 20px;}
+.products h5 {font-size: 22px; margin-bottom: 20px;}
+
+
+}
+@media only screen and (min-width : 150px) and (max-width : 767px){
+
+.products {padding-top: 50px; padding-bottom: 50px;}
+.products .container-fluid {width: 95%;}
+.products h3 {font-size: 24px; margin-bottom: 15px;} 
+
+.products .mob {display: block;}
+.products .lap {display: none;}
+
+.products .sub-bg {margin-top: 40px; padding: 20px; text-align: left;}
+.products .top {margin-top: 20px;}
+.products h5 {font-size: 22px; margin-top: 15px; margin-bottom: 15px;}
+.products .zoom {margin-top: 20px;}
+.products a.bot {width: 100%; margin: 0 0px 15px 0px; padding: 15px 20px;}
+.products .table {margin-top: 30px;}
+
+.products .dw-img h6 {font-size: 20px;}
+
+
+}
+@media only screen and (max-width : 375px){
+
+
+
+}
+@media only screen and (max-width : 360px){
+
+
+
+}
+@media only screen and (max-width : 320px){
+.products h3 {font-size: 22px; margin-bottom: 10px;}
+.products .sub-bg {padding: 15px;}
+.products h5 {font-size: 18px; line-height: 24px;}
+.products .pdf img {width: 22%;}
+
+}

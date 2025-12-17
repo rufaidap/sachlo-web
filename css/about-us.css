@@ -1,0 +1,498 @@
+/*about*/
+.about {
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+.about .container-fluid {
+  width: 80%;
+}
+.about img {
+  width: 100%;
+}
+.about h3 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+.about p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1c1d1d;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+/*counting*/
+.counting {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: #4a4a4a;
+  background: url(../images/counting-bg.jpg) bottom no-repeat;
+  background-size: 100%;
+}
+
+.counting .container-fluid {
+  width: 65%;
+}
+.counting .bx {
+  background: #fff;
+  padding: 45px;
+  border: solid #00a9e7 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+.counting .bx .wi {
+  width: 100%;
+}
+.counting .bx:hover {
+  box-shadow: 0px 4px 30px rgb(0 0 0 / 12%);
+}
+.counting .bx img {
+  width: 30%;
+  margin-bottom: 20px;
+}
+.counting .bx h3 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #1f1f1f;
+  margin-bottom: 10px;
+  display: inline-flex;
+}
+.counting .bx h5 {
+  color: #1f1f1f;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.counting .border-eff {
+  position: relative;
+  transition: ease-out 0.5s;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+}
+.counting .border-eff::after,
+.counting .border-eff::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  transition: 0.5s;
+}
+.counting .border-eff::after {
+  top: -3px;
+  left: -3px;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+}
+.counting .border-eff::before {
+  bottom: -3px;
+  right: -3px;
+  border-bottom: 3px solid transparent;
+  border-right: 3px solid transparent;
+}
+.counting .border-eff:hover::after,
+.counting .border-eff:hover::before {
+  width: calc(50% + 3px);
+  height: calc(50% + 3px);
+  border-color: rgb(255 192 35);
+}
+
+/*history*/
+.history {
+  padding-bottom: 70px;
+}
+.history .container-fluid {
+  width: 80%;
+}
+.history .bg {
+  background: url(../images/history.jpg) bottom no-repeat;
+  background-size: 100%;
+}
+.history .bx {
+  background: #015fb8;
+  padding: 80px 40px;
+}
+.history .bx h4 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.history .bx p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+.history img {
+  width: 100%;
+}
+
+/*vision*/
+.vision {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.vision .container-fluid {
+  width: 80%;
+}
+.vision h3 {
+  font-size: 26px;
+  font-weight: 400;
+  color: #1c1d1d;
+  margin-bottom: 30px;
+}
+.vision h3 span {
+  font-weight: 600;
+}
+.vision p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1c1d1d;
+  margin: 0;
+}
+.vision .do li {
+  font-size: 13px;
+  color: #1c1d1d;
+  padding: 0px 0px 0px 20px;
+  line-height: 20px;
+  background: url(../images/point.png) no-repeat 0 6px;
+  font-weight: 500;
+}
+.vision .do li:not(:first-child) {
+  margin-top: 18px;
+}
+.vision .im {
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+}
+@media only screen and (min-width: 1600px) and (max-width: 1919px) {
+}
+@media only screen and (min-width: 1440px) and (max-width: 1599px) {
+}
+@media only screen and (min-width: 1366px) and (max-width: 1439px) {
+}
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+  .about .container-fluid {
+    width: 85%;
+  }
+
+  .counting .container-fluid {
+    width: 70%;
+  }
+
+  .Chairman .container-fluid {
+    width: 70%;
+  }
+  .vision .container-fluid {
+    width: 85%;
+  }
+
+  .history .container-fluid {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1279px) {
+  .about .container-fluid {
+    width: 85%;
+  }
+
+  .counting .container-fluid {
+    width: 70%;
+  }
+
+  .Chairman .container-fluid {
+    width: 70%;
+  }
+  .vision .container-fluid {
+    width: 85%;
+  }
+
+  .history .container-fluid {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .about {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .about .container-fluid {
+    width: 90%;
+  }
+  .about h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .about .bx h4 {
+    font-size: 22px;
+  }
+
+  .counting {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .counting .container-fluid {
+    width: 90%;
+  }
+
+  .Chairman {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .Chairman .container-fluid {
+    width: 90%;
+  }
+
+  .counting .bx {
+    padding: 35px;
+  }
+  .counting .bx h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  .counting .bx img {
+    width: 26%;
+    margin-bottom: 15px;
+  }
+
+  .vision {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .vision .container-fluid {
+    width: 90%;
+  }
+  .vision h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .vision .im {
+    margin-bottom: 10px;
+  }
+  .vision .do li:not(:first-child) {
+    margin-top: 8px;
+  }
+
+  .history {
+    padding-bottom: 50px;
+  }
+  .history .container-fluid {
+    width: 90%;
+  }
+  .history .bx {
+    padding: 50px 40px;
+  }
+  .history .bx h4 {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .about .container-fluid {
+    width: 90%;
+  }
+  .about h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .about .bx h4 {
+    font-size: 22px;
+  }
+  .about img {
+    margin-top: 20px;
+  }
+
+  .counting {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .counting .container-fluid {
+    width: 90%;
+  }
+
+  .Chairman {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .Chairman .container-fluid {
+    width: 90%;
+  }
+
+  .counting .bx {
+    padding: 35px;
+  }
+  .counting .bx h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  .counting .bx img {
+    width: 26%;
+    margin-bottom: 15px;
+  }
+
+  .vision {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .vision .container-fluid {
+    width: 90%;
+  }
+  .vision h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .vision .im {
+    margin-bottom: 10px;
+  }
+  .vision .do li:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  .history {
+    padding-bottom: 50px;
+  }
+  .history .container-fluid {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 150px) and (max-width: 767px) {
+  .about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .about .container-fluid {
+    width: 95%;
+  }
+  .about h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .about .bx h4 {
+    font-size: 22px;
+  }
+
+  .counting {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background: #4a4a4a;
+  }
+  .counting .container-fluid {
+    width: 95%;
+  }
+
+  .Chairman {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background: #4a4a4a;
+  }
+  .Chairman .container-fluid {
+    width: 95%;
+  }
+
+  .counting .bx {
+    padding: 35px;
+    margin-top: 20px;
+  }
+  .counting .bx h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  .counting .bx img {
+    width: 20%;
+    margin-bottom: 15px;
+  }
+
+  .vision {
+    padding-top: 35px;
+    padding-bottom: 50px;
+  }
+  .vision .container-fluid {
+    width: 95%;
+  }
+  .vision h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  .vision .im {
+    margin-bottom: 10px;
+  }
+  .vision .do li:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  .history {
+    padding-bottom: 50px;
+  }
+  .history .container-fluid {
+    width: 95%;
+  }
+  .history .bx {
+    padding: 45px 30px;
+  }
+  .history .bx h4 {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 375px) {
+}
+@media only screen and (max-width: 360px) {
+}
+@media only screen and (max-width: 320px) {
+  .about h3 {
+    font-size: 22px;
+  }
+  .about .bx h4 {
+    font-size: 20px;
+  }
+
+  .vision h3 {
+    font-size: 20px;
+  }
+}
+
+.binded-item {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.bg-secondary1 {
+  background-color: #f6f9fc !important;
+}
+
+.br20 {
+  border-radius: 2.23rem !important;
+}
+
+/*Chairman*/
+.Chairman {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: #4a4a4a;
+  background: url(../images/counting-bg2.jpg) bottom no-repeat;
+  background-size: 100%;
+}
+
+.Chairman .container-fluid {
+  width: 65%;
+}
