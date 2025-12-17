@@ -1,3 +1,61 @@
+<?php
+require 'graphql.php';
+
+$slug = $_GET['slug'] ?? '';
+
+if (empty($slug)) {
+    header("Location: news.php");
+    exit;
+}
+
+$query = '
+query GetNewsBySlug($slug: String!) {
+  getNewsBySlug(slug: $slug) {
+    id
+    title
+    slug
+    banner_image
+    thumbnail_image
+    short_description
+    full_content
+    type
+    location
+    published_date
+    status
+    views
+    deleted
+    created_at
+    updated_at
+    content_blocks {
+      id
+      news_id
+      block_type
+      content
+      sort_order
+    }
+    tags
+  }
+}';
+
+$variables = ['slug' => $slug];
+$response = graphqlRequest($query, $variables);
+$news = $response['data']['getNewsBySlug'] ?? null;
+
+if (!$news) {
+    // Optionally handle case where news exists but slug is wrong, or simply 404
+    header("Location: news.php");
+    exit;
+}
+
+$imgSrc = !empty($news['banner_image']) ? $news['banner_image'] : (!empty($news['thumbnail_image']) ? $news['thumbnail_image'] : 'images/nws-fr-1.jpg');
+
+$dateVal = !empty($news['published_date']) ? $news['published_date'] : $news['created_at'];
+if (is_numeric($dateVal) && strlen((string)$dateVal) > 10) {
+    $dateVal = $dateVal / 1000;
+}
+$displayDate = date('M d, Y', (int)$dateVal);
+?>
+
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->
 <!DOCTYPE html>
 <html>
@@ -70,24 +128,24 @@
                     <!-- Article Header -->
                     <div class="article-header">
                         <div class="article-meta">
-                            <span class="article-date">Nov 10, 2025</span>
+                            <span class="article-date"><?php echo $displayDate; ?></span>
                             <span class="article-category">Press Release</span>
                             <span class="article-location">Riyadh, Saudi Arabia</span>
                         </div>
-                        <h1 class="article-title">Sachlo Achieves 8 Million Safe Man Hours</h1>
+                        <h1 class="article-title"><?php echo $news['title']; ?></h1>
                         <div class="article-subtitle">
-                            <p>Leading chemical manufacturer demonstrates commitment to workplace safety and operational excellence</p>
+                            <p><?php echo $news['short_description']; ?></p>
                         </div>
                     </div>
 
                     <!-- Featured Image -->
                     <div class="article-featured-image">
-                        <img src="images/nws-1.jpg" alt="Sachlo Safety Achievement" class="img-fluid">
+                        <img src=<?php echo $imgSrc; ?> alt="Sachlo Safety Achievement" class="img-fluid">
                     </div>
 
                     <!-- Article Content -->
                     <div class="article-content">
-                        <p class="lead">We are pleased to announce that SACHLO has achieved a Company safety milestone of 8 million safe man hours, demonstrating our unwavering commitment to workplace safety and operational excellence in the chemical manufacturing industry.</p>
+                        <p class="lead"> <?php echo $news['full_content']; ?></p>
 
                         <p>This significant achievement reflects the dedication of our entire workforce to maintaining the highest safety standards across all our operations. The milestone was reached through continuous improvement in our safety protocols, comprehensive training programs, and a culture that prioritizes the well-being of our employees above all else.</p>
 
