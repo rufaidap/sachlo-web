@@ -1,3 +1,48 @@
+<?php
+require 'graphql.php';
+
+$query = '
+query GetNews($size: Int, $page: Int, $search: String, $status: String) {
+  getNews(size: $size, page: $page, search: $search, status: $status) {
+    totalPages
+    currentPage
+    totalData
+    data {
+      id
+      title
+      slug
+      banner_image
+      thumbnail_image
+      short_description
+      full_content
+      type
+      location
+      published_date
+      status
+      views
+      deleted
+      created_at
+      updated_at
+      content_blocks {
+        id
+        news_id
+        block_type
+        content
+        sort_order
+      }
+      tags
+    }
+  }
+}';
+
+$response = graphqlRequest($query);
+
+// print_r($query);
+// exit;
+
+$newsList = $response['data']['newsList'] ?? [];
+?>
+
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->
 <!DOCTYPE html>
 <html>
