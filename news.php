@@ -134,7 +134,7 @@ $newsList = $response['data']['getNews'] ?? [];
                                 </a>
                                 <div class="tx">
                                     <h4><a href="news-detail.php?slug=<?php echo htmlspecialchars($news['slug']); ?>"><?php echo htmlspecialchars($news['title']); ?></a></h4>
-                                    <p><?php echo htmlspecialchars(mb_strimwidth($news['short_description'], 0, 100, '...')); ?></p>
+                                    <p><?php echo htmlspecialchars($news['short_description']); ?></p>
                                 </div>
                             </div>
                         </div>

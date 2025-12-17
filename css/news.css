@@ -33,6 +33,14 @@
   text-decoration: none;
 }
 
+.news .bx .tx p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .news .bx img {
   width: 100%;
   height: 260px;
