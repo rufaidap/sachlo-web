@@ -1,4 +1,24 @@
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->
+<?php
+require 'graphql.php';
+
+$newsQuery = '
+query GetNews($size: Int, $page: Int, $search: String, $status: String) {
+  getNews(size: $size, page: $page, search: $search, status: $status) {
+    data {
+      title
+      slug
+      thumbnail_image
+      banner_image
+      short_description
+      published_date
+      created_at
+    }
+  }
+}';
+$newsResponse = graphqlRequest($newsQuery, ['size' => 3]);
+$homeNewsList = $newsResponse['data']['getNews']['data'] ?? [];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -501,54 +521,43 @@ gtag('config', 'UA-128566164-1');
             </div>
 
             <div class="row">
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="bx">
-                        <a class="grid__image">
-                            <img src="images/nws-fr-1.jpg" alt=" chemical manifactiring company in Saudi Arabia">
-                            <div class="post-date">Dec 01, 2021</div>
-                            <div class="hov">
-                                <p>View More</p>
+                <?php if (!empty($homeNewsList)): ?>
+                    <?php foreach ($homeNewsList as $index => $news): ?>
+                        <div class="col-lg-4 col-md-6 <?php echo ($index === 1) ? 'col-post-center' : ''; ?>">
+                            <div class="bx">
+                                <a href="news-detail.php?slug=<?php echo htmlspecialchars($news['slug']); ?>" class="grid__image">
+                                    <?php 
+                                        $imgSrc = 'images/nws-fr-1.jpg';
+                                        if (!empty($news['thumbnail_image'])) {
+                                            $imgSrc = $news['thumbnail_image'];
+                                        } elseif (!empty($news['banner_image'])) {
+                                            $imgSrc = $news['banner_image'];
+                                        }
+                                        
+                                        $dateVal = !empty($news['published_date']) ? $news['published_date'] : $news['created_at'];
+                                        if (is_numeric($dateVal) && strlen((string)$dateVal) > 10) {
+                                            $dateVal = $dateVal / 1000;
+                                        }
+                                        $displayDate = date('M d, Y', (int)$dateVal);
+                                    ?>
+                                    <img src="<?php echo htmlspecialchars($imgSrc); ?>" alt="<?php echo htmlspecialchars($news['title']); ?>">
+                                    <div class="post-date"><?php echo $displayDate; ?></div>
+                                    <div class="hov">
+                                        <p>View More</p>
+                                    </div>
+                                </a>
+                                <div class="tx">
+                                    <h4><a href="news-detail.php?slug=<?php echo htmlspecialchars($news['slug']); ?>" style="<?php echo ($index === 1) ? '' : 'color: #1c1d1d; text-decoration: none;'; ?>"><?php echo htmlspecialchars($news['title']); ?></a></h4>
+                                    <p><?php echo htmlspecialchars($news['short_description']); ?></p>
+                                </div>
                             </div>
-                        </a>
-                        <div class="tx">
-                            <h4>New Website for Sachlo Saudi Arabia Launched</h4>
-                            <p>We are pleased to announce the launching of a new website of SACHLO...</p>
                         </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="col-12 text-center p-5">
+                        <p>No news updates available.</p>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-post-center">
-                    <div class="bx">
-                        <a  href="news-detail.php" class="grid__image">
-                            <img src="images/nws-fr-2.jpg" alt=" chemical manifactiring company in Saudi Arabia">
-                            <div class="post-date">Nov 10, 2025</div>
-                            <div class="hov">
-                                <p>View More</p>
-                            </div>
-                        </a>
-                        <div class="tx">
-                            <h4>Achieved 8 Million Safe Man Hours</h4>
-                            <p>We are pleased to announce that SACHLO has achieved Company safety....</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="bx">
-                        <a class="grid__image">
-                            <img src="images/nws-fr-1.jpg" alt=" chemical manifactiring company in Saudi Arabia">
-                            <div class="post-date">Dec 01, 2021</div>
-                            <div class="hov">
-                                <p>View More</p>
-                            </div>
-                        </a>
-                        <div class="tx">
-                            <h4>New Website for Sachlo Saudi Arabia Launched</h4>
-                            <p>We are pleased to announce the launching of the new website of SACHLO....</p>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
 
                 <div class="col-lg-12 ce"><a href="news.php" class="btn">Learn More<i
                             class="demo-icon icon-right-arrow">&#xe802;</i></a></div>

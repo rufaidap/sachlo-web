@@ -868,9 +868,17 @@ button.lets-play {
   font-weight: 500;
   color: #1c1d1d;
   text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
 }
 .news .bx img {
   width: 100%;
+  height: 260px;
+  object-fit: cover;
   display: block;
 }
 .news .bx .grid__image {
