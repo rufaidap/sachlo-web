@@ -5,11 +5,12 @@
 .news .container-fluid {width: 80%;}
 .news .bx {margin-bottom: 30px; -webkit-transition: 0.3s; transition: 0.3s;}
 .news .bx h4 {font-size: 20px; font-weight: 600; color: #1c1d1d; margin-top: 20px; margin-bottom: 20px;}
-.news .bx img {width: 100%; display: block;}
+.news .bx img {width: 100%; height: 260px; object-fit: cover; display: block;}
 .news .bx .grid__image {display: block; position: relative; margin: 0 auto;}
 .news .bx .grid__image .hov {position: absolute; bottom: 0; left: 0; right: 0; top: 0; background-color: rgb(15 164 228 / 72%); overflow: hidden; width: 100%; height: 100%; -webkit-transform: scale(0); transition: .6s ease;}
 .news .bx:hover .grid__image .hov {transform: scale(1);}
 .news .bx .grid__image .hov p {color: #fff; font-size: 15px; margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); text-align: center;}
+.news .bx p {font-size: 13px; font-weight: 500; color: #1c1d1d; text-align: right; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0;}
 .col-post-center {border-left: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2;}
 .post-date {position: absolute; background-color: #fff; color: #757575; font-size: 12px; bottom: 0; right: 0; padding: 0.5rem 1rem 0.4rem; z-index: 99;}
 

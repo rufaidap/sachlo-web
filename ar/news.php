@@ -1,4 +1,31 @@
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->
+<?php
+require '../graphql.php';
+
+$query = '
+query GetNews($size: Int, $page: Int, $search: String, $status: String, $type: String) {
+  getNews(size: $size, page: $page, search: $search, status: $status, type: $type) {
+    totalPages
+    currentPage
+    totalData
+    data {
+      id
+      title
+      title_ar
+      slug
+      banner_image
+      thumbnail_image
+      short_description
+      short_description_ar
+      published_date
+      created_at
+    }
+  }
+}';
+
+$response = graphqlRequest($query);
+$newsList = $response['data']['getNews'] ?? [];
+?>
 <!DOCTYPE html>
 <html>
 <title>Leading chemical manufacturing companies in Saudi Arabia</title>
@@ -70,53 +97,56 @@
 
             <div class="row">
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="bx text-right">
-                        <a class="grid__image">
-                            <img src="images/nws-fr-1.jpg" alt=" chemical manifactiring company in Saudi Arabia">
-                            <div class="post-date">Dec 01, 2021</div>
-                            <div class="hov">
-                                <p> عرض المزيد </p>
+                <?php if (!empty($newsList['data'])): ?>
+                    <?php foreach ($newsList['data'] as $news): ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bx text-right">
+                                <a href="news-detail.php?slug=<?php echo htmlspecialchars($news['slug']); ?>" class="grid__image">
+                                    <?php 
+                                        $imgSrc = 'images/nws-fr-1.jpg'; // Default placeholder
+                                        if (!empty($news['thumbnail_image'])) {
+                                            $path = $news['thumbnail_image'];
+                                            if (!filter_var($path, FILTER_VALIDATE_URL) && strpos($path, '/') !== 0 && strpos($path, '../') !== 0) {
+                                                $imgSrc = '../' . $path;
+                                            } else {
+                                                $imgSrc = $path;
+                                            }
+                                        } elseif (!empty($news['banner_image'])) {
+                                            $path = $news['banner_image'];
+                                            if (!filter_var($path, FILTER_VALIDATE_URL) && strpos($path, '/') !== 0 && strpos($path, '../') !== 0) {
+                                                $imgSrc = '../' . $path;
+                                            } else {
+                                                $imgSrc = $path;
+                                            }
+                                        }
+                                        
+                                        $dateVal = !empty($news['published_date']) ? $news['published_date'] : $news['created_at'];
+                                        if (is_numeric($dateVal) && strlen((string)$dateVal) > 10) {
+                                            $dateVal = $dateVal / 1000;
+                                        }
+                                        $displayDate = date('M d, Y', (int)$dateVal);
+                                        
+                                        $title = !empty($news['title_ar']) ? $news['title_ar'] : $news['title'];
+                                        $desc = !empty($news['short_description_ar']) ? $news['short_description_ar'] : $news['short_description'];
+                                    ?>
+                                    <img src="<?php echo htmlspecialchars($imgSrc); ?>" alt="<?php echo htmlspecialchars($title); ?>">
+                                    <div class="post-date"><?php echo $displayDate; ?></div>
+                                    <div class="hov">
+                                        <p> عرض المزيد </p>
+                                    </div>
+                                </a>
+                                <div class="tx">
+                                    <h4><a href="news-detail.php?slug=<?php echo htmlspecialchars($news['slug']); ?>" style="color: #1c1d1d; text-decoration: none;"><?php echo htmlspecialchars($title); ?></a></h4>
+                                    <p><?php echo htmlspecialchars($desc); ?></p>
+                                </div>
                             </div>
-                        </a>
-                        <div class="tx">
-                            <h4> تدشين الموقع الألكتروني الجديد لساكلو السعودية </h4>
-                            <p> يسرنا أن نعلن عن إطلاق الموقع الألكتروني الجديد لشركة ساكلو </p>
                         </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="col-12 text-center p-5">
+                        <p> لا توجد أخبار متاحة حاليا. </p>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-post-center">
-                    <div class="bx text-right">
-                        <a href="news-detail.php" class="grid__image">
-                            <img src="images/nws-fr-2.jpg" alt=" chemical manifactiring company in Saudi Arabia">
-                            <div class="post-date">Nov 10, 2025</div>
-                            <div class="hov">
-                                <p> عرض المزيد </p>
-                            </div>
-                        </a>
-                        <div class="tx">
-                            <h4>تحقيق 8 ملايين ساعة مل آمنة </h4>
-                            <p> يسرنا أن نعلن أن ساكلو قد حققت سلامة الشركة </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="bx text-right">
-                        <a class="grid__image">
-                            <img src="images/nws-fr-1.jpg" alt=" chemical manifactiring company in Saudi Arabia">
-                            <div class="post-date">Dec 01, 2021</div>
-                            <div class="hov">
-                                <p> عرض المزيد </p>
-                            </div>
-                        </a>
-                        <div class="tx">
-                            <h4> تدشين الموقع الألكتروني الجديد لساكلو السعودية </h4>
-                            <p> يسرنا أن نعلن عن إطلاق الموقع الألكتروني الجديد لشركة ساكلو </p>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
 
             </div>
 
