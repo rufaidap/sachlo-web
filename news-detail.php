@@ -174,10 +174,13 @@ $displayDate = date('M d, Y', (int)$dateVal);
                     <div class="article-footer">
                         <div class="article-tags">
                             <span class="tag-label">Tags:</span>
-                            <a href="#" class="tag">Safety</a>
-                            <a href="#" class="tag">Chemical Manufacturing</a>
-                            <a href="#" class="tag">Saudi Arabia</a>
-                            <a href="#" class="tag">Workplace Safety</a>
+                            <?php 
+                            if (!empty($news['tags']) && is_array($news['tags'])) {
+                                foreach ($news['tags'] as $tag) {
+                                    echo '<a href="#" class="tag">' . htmlspecialchars($tag) . '</a>';
+                                }
+                            }
+                            ?>
                         </div>
 
                         <div class="article-share">
