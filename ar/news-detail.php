@@ -54,7 +54,7 @@ query GetRelatedNews($getRelatedNewsId: ID!, $size: Int, $page: Int, $search: St
       slug
       thumbnail_image
       published_date
-      created_at
+      created_at 
     }
   }
 }';
@@ -86,6 +86,7 @@ $content = !empty($news['full_content_ar']) ? $news['full_content_ar'] : $news['
 $type = !empty($news['type_ar']) ? $news['type_ar'] : $news['type'];
 // Handle tags array if localized tags exist
 $tags = (!empty($news['tags_ar']) && is_array($news['tags_ar'])) ? $news['tags_ar'] : $news['tags'];
+$location = $news['location'];
 ?>
 
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->
@@ -181,7 +182,9 @@ $tags = (!empty($news['tags_ar']) && is_array($news['tags_ar'])) ? $news['tags_a
                         <div class="article-meta">
                             <span class="article-date"><?php echo $displayDate; ?></span>
                             <span class="article-category"><?php echo htmlspecialchars($type); ?></span>
-                            <span class="article-location">الرياض، المملكة العربية السعودية</span>
+                            <span class="article-location">
+                              <?php echo htmlspecialchars($location); ?>
+                            </span>
                         </div>
                         <h1 class="article-title"><?php echo htmlspecialchars($title); ?></h1>
                         <div class="article-subtitle">

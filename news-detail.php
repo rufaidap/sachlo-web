@@ -148,7 +148,7 @@ $displayDate = date('M d, Y', (int)$dateVal);
                         <div class="article-meta">
                             <span class="article-date"><?php echo $displayDate; ?></span>
                             <span class="article-category"><?php echo $news['type']; ?></span>
-                            <span class="article-location">Riyadh, Saudi Arabia</span>
+                            <span class="article-location"><?php echo $news['location']; ?></span>
                         </div>
                         <h1 class="article-title"><?php echo $news['title']; ?></h1>
                         <div class="article-subtitle">
