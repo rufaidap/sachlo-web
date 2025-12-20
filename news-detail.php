@@ -45,6 +45,24 @@ if (!$news) {
     exit;
 }
 
+$relatedQuery = '
+query GetRelatedNews($getRelatedNewsId: ID!, $size: Int, $page: Int, $search: String, $status: String, $type: String) {
+  getRelatedNews(id: $getRelatedNewsId, size: $size, page: $page, search: $search, status: $status, type: $type) {
+    data {
+      id
+      title
+      slug
+      thumbnail_image
+      published_date
+      created_at
+    }
+  }
+}';
+
+$relatedVariables = ['getRelatedNewsId' => $news['id'], 'size' => 3];
+$relatedResponse = graphqlRequest($relatedQuery, $relatedVariables);
+$relatedNewsList = $relatedResponse['data']['getRelatedNews']['data'] ?? [];
+
 $imgSrc = !empty($news['banner_image']) ? $news['banner_image'] : (!empty($news['thumbnail_image']) ? $news['thumbnail_image'] : 'images/nws-fr-1.jpg');
 
 $dateVal = !empty($news['published_date']) ? $news['published_date'] : $news['created_at'];
@@ -201,33 +219,29 @@ $displayDate = date('M d, Y', (int)$dateVal);
                     <div class="related-articles">
                         <h3>Related Articles</h3>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="related-article">
-                                    <img src="images/nws-fr-1.jpg" alt="New Website Launch">
-                                    <div class="related-content">
-                                        <h4><a href="news-detail.php">New Website for Sachlo Saudi Arabia Launched</a></h4>
-                                        <span class="date">Dec 01, 2021</span>
+                            <?php if (!empty($relatedNewsList)): ?>
+                                <?php foreach ($relatedNewsList as $related): ?>
+                                    <?php 
+                                        $relImg = !empty($related['thumbnail_image']) ? $related['thumbnail_image'] : 'images/nws-fr-1.jpg';
+                                        $relDate = !empty($related['published_date']) ? $related['published_date'] : $related['created_at'];
+                                        if (is_numeric($relDate) && strlen((string)$relDate) > 10) {
+                                            $relDate = $relDate / 1000;
+                                        }
+                                        $relDisplayDate = date('M d, Y', (int)$relDate);
+                                    ?>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="related-article">
+                                            <img src="<?php echo htmlspecialchars($relImg); ?>" alt="<?php echo htmlspecialchars($related['title']); ?>">
+                                            <div class="related-content">
+                                                <h4><a href="news-detail.php?slug=<?php echo htmlspecialchars($related['slug']); ?>"><?php echo htmlspecialchars($related['title']); ?></a></h4>
+                                                <span class="date"><?php echo $relDisplayDate; ?></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="related-article">
-                                    <img src="images/nws-fr-2.jpg" alt="Safety Achievement">
-                                    <div class="related-content">
-                                        <h4><a href="news-detail.php">Sachlo Expands Production Capacity</a></h4>
-                                        <span class="date">Nov 15, 2021</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="related-article">
-                                    <img src="images/nws-fr-1.jpg" alt="Industry Recognition">
-                                    <div class="related-content">
-                                        <h4><a href="news-detail.php">Sachlo Receives Industry Excellence Award</a></h4>
-                                        <span class="date">Oct 20, 2021</span>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="col-12"><p>No related articles found.</p></div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
