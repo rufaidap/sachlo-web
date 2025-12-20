@@ -13,12 +13,16 @@ query GetNewsBySlug($slug: String!) {
   getNewsBySlug(slug: $slug) {
     id
     title
+    title_ar
     slug
     banner_image
     thumbnail_image
     short_description
+    short_description_ar
     full_content
+    full_content_ar
     type
+    type_ar
     location
     published_date
     status
@@ -26,14 +30,8 @@ query GetNewsBySlug($slug: String!) {
     deleted
     created_at
     updated_at
-    content_blocks {
-      id
-      news_id
-      block_type
-      content
-      sort_order
-    }
     tags
+    tags_ar
   }
 }';
 
@@ -54,6 +52,8 @@ if (is_numeric($dateVal) && strlen((string)$dateVal) > 10) {
     $dateVal = $dateVal / 1000;
 }
 $displayDate = date('M d, Y', (int)$dateVal);
+
+ 
 ?>
 
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->
@@ -121,7 +121,7 @@ $displayDate = date('M d, Y', (int)$dateVal);
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                             <li class="breadcrumb-item"><a href="news.php">News & Media</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Press Release</li>
+                            <li class="breadcrumb-item active" aria-current="page"><?php echo $news['type']; ?></li>
                         </ol>
                     </nav>
 
@@ -129,7 +129,7 @@ $displayDate = date('M d, Y', (int)$dateVal);
                     <div class="article-header">
                         <div class="article-meta">
                             <span class="article-date"><?php echo $displayDate; ?></span>
-                            <span class="article-category">Press Release</span>
+                            <span class="article-category"><?php echo $news['type']; ?></span>
                             <span class="article-location">Riyadh, Saudi Arabia</span>
                         </div>
                         <h1 class="article-title"><?php echo $news['title']; ?></h1>
@@ -147,7 +147,7 @@ $displayDate = date('M d, Y', (int)$dateVal);
                     <div class="article-content">
                         <p class="lead"> <?php echo $news['full_content']; ?></p>
 
-                        <p>This significant achievement reflects the dedication of our entire workforce to maintaining the highest safety standards across all our operations. The milestone was reached through continuous improvement in our safety protocols, comprehensive training programs, and a culture that prioritizes the well-being of our employees above all else.</p>
+                        <!-- <p>This significant achievement reflects the dedication of our entire workforce to maintaining the highest safety standards across all our operations. The milestone was reached through continuous improvement in our safety protocols, comprehensive training programs, and a culture that prioritizes the well-being of our employees above all else.</p>
 
                         <h2>Commitment to Safety Excellence</h2>
                         <p>At Sachlo, safety is not just a priority—it's a core value that guides every decision we make. Our comprehensive safety management system includes:</p>
@@ -167,7 +167,7 @@ $displayDate = date('M d, Y', (int)$dateVal);
                         <h2>Future Commitment</h2>
                         <p>While we celebrate this milestone, we remain committed to continuous improvement in all aspects of our safety program. Our goal is to maintain and exceed these standards as we continue to grow and expand our operations.</p>
 
-                        <p>We extend our gratitude to all employees, contractors, and stakeholders who have contributed to this remarkable achievement through their daily commitment to safety excellence.</p>
+                        <p>We extend our gratitude to all employees, contractors, and stakeholders who have contributed to this remarkable achievement through their daily commitment to safety excellence.</p> -->
                     </div>
 
                     <!-- Article Footer -->

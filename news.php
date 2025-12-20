@@ -2,20 +2,24 @@
 require 'graphql.php';
 
 $query = '
-query GetNews($size: Int, $page: Int, $search: String, $status: String) {
-  getNews(size: $size, page: $page, search: $search, status: $status) {
+query GetNews($size: Int, $page: Int, $search: String, $status: String, $type: String) {
+  getNews(size: $size, page: $page, search: $search, status: $status, type: $type) {
     totalPages
     currentPage
     totalData
     data {
       id
       title
+      title_ar
       slug
       banner_image
       thumbnail_image
       short_description
+      short_description_ar
       full_content
+      full_content_ar
       type
+      type_ar
       location
       published_date
       status
@@ -23,14 +27,8 @@ query GetNews($size: Int, $page: Int, $search: String, $status: String) {
       deleted
       created_at
       updated_at
-      content_blocks {
-        id
-        news_id
-        block_type
-        content
-        sort_order
-      }
       tags
+      tags_ar
     }
   }
 }';
