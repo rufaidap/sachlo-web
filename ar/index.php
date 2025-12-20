@@ -558,7 +558,7 @@ gtag('config', 'UA-128566164-1');
                                         $title = !empty($news['title_ar']) ? $news['title_ar'] : $news['title'];
                                         $desc = !empty($news['short_description_ar']) ? $news['short_description_ar'] : $news['short_description'];
                                     ?>
-                                    <img src="<?php echo htmlspecialchars($imgSrc); ?>" alt="<?php echo htmlspecialchars($title); ?>">
+                                    <img src="<?php echo htmlspecialchars($imgSrc); ?>" onerror="this.onerror=null;this.src='images/nws-fr-1.jpg';" alt="<?php echo htmlspecialchars($title); ?>">
                                     <div class="post-date"><?php echo $displayDate; ?></div>
                                     <div class="hov">
                                         <p> عرض المزيد </p>
