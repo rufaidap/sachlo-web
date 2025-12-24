@@ -24,6 +24,7 @@ query GetNewsBySlug($slug: String!) {
     type
     type_ar
     location
+    location_ar
     published_date
     status
     views
@@ -86,7 +87,7 @@ $content = !empty($news['full_content_ar']) ? $news['full_content_ar'] : $news['
 $type = !empty($news['type_ar']) ? $news['type_ar'] : $news['type'];
 // Handle tags array if localized tags exist
 $tags = (!empty($news['tags_ar']) && is_array($news['tags_ar'])) ? $news['tags_ar'] : $news['tags'];
-$location = $news['location'];
+$location = !empty($news['location_ar']) ? $news['location_ar'] : $news['location'];
 ?>
 
 <!--  Developed by adox solutions {info@adoxsolutions.com} -->
