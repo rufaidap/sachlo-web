@@ -1,7 +1,7 @@
 <?php
 
 function graphqlRequest($query, $variables = []) {
-    $endpoint = "https://aaliyah-nontautomeric-responsively.ngrok-free.dev/graphql";
+    $endpoint = "https://api.sachlo.com/graphql";
 
     $payload = json_encode([
         "query" => $query,
